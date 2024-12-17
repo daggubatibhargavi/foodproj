@@ -1,7 +1,7 @@
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const usernameRegex =
+const passwordRegex =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(){}:"><?~"])[a-zA-Z0-9!@#$%^&*(){}:"><?~"]{6,}$/;
-const passwordRegex = /^[A-Za-z0-9]{8,}$/;
+const usernameRegex = /^[A-Za-z0-9]{8,}$/;
 
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -50,8 +50,7 @@ document
     // const passwordValue = password.value.trim();
 
     if (!usernameRegex.test(username.value)) {
-      usernameError.textContent =
-        "Username must be at least 6 characters with uppercase, lowercase, number, and special characters.";
+      usernameError.textContent = "username must be at least 8 characters.";
       isValid = false;
     }
 
@@ -61,7 +60,8 @@ document
     }
 
     if (!passwordRegex.test(password.value)) {
-      passwordError.textContent = "Password must be at least 8 characters.";
+      passwordError.textContent =
+        "password must be at least 6 characters with uppercase, lowercase, number, and special characters.";
       isValid = false;
     }
 
